@@ -12,6 +12,13 @@ const NavItemsInfo = [
 ];
 
 const NavItem = ({ item }) => {
+  // dropdown
+  const [dropdown, setDropdown] = useState(false);
+  const toggleDropdown = () => {
+    setDropdown((currentState) => {
+      return !currentState;
+    });
+  };
   return (
     <li className="relative group">
       {item.type === "link" ? (
@@ -19,18 +26,25 @@ const NavItem = ({ item }) => {
           <a href="/" className="px-4 py-2">
             {item.name}
           </a>
-          <span className="text-blue-500 absolute transition-all duration-500 font-bold right-0 top-0 group-hover:right-[90%] opacity-0 group-hover:opacity-100 ">
+          <span className="cursor-pointer text-blue-500 absolute transition-all duration-500 font-bold right-0 top-0 group-hover:right-[90%] opacity-0 group-hover:opacity-100 ">
             /
           </span>
         </>
       ) : (
-        <>
-          <a href="/" className="flex items-center px-4 py-2">
+        <div className="flex flex-col items-center ">
+          <button
+            className="flex items-center px-4 py-2"
+            onClick={toggleDropdown}
+          >
             <span>{item.name}</span>
             <MdArrowDropDown />
-          </a>
-          <div className="hidden transition-all duration-500 absolute left-[80%] -top-[170%] lg:left-0 lg:bottom-0 lg:right-0 transform translate-y-full group-hover:block  w-max">
-            <ul className="flex flex-col shadow-lg rounded-lg overflow-hidden">
+          </button>
+          <div
+            className={`${
+              dropdown ? "block" : "hidden"
+            } lg:hidden transition-all duration-500 pt-4 lg:absolute lg:bottom-0 lg:right-0 transform-full lg:translate-y-full lg:group-hover:block  w-max`}
+          >
+            <ul className="bg-dark-soft lg:bg-transparent text-center flex flex-col shadow-lg rounded-lg overflow-hidden">
               {item.items.map((page) => (
                 <a
                   href="/"
@@ -41,7 +55,7 @@ const NavItem = ({ item }) => {
               ))}
             </ul>
           </div>
-        </>
+        </div>
       )}
     </li>
   );
@@ -54,8 +68,9 @@ const Header = () => {
       return !currentState;
     });
   };
+
   return (
-    <section>
+    <section className="sticky top-0 left-0 right-0 z-50">
       <header className="container mx-auto px-5 flex justify-between items-center py-4">
         <div>
           <img className="w-16" src={images.Logo} alt="logo" />
