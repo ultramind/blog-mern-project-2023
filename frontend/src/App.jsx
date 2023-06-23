@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import HomePage from './pages/HomePage'
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
+    <div className="App font-opensans">
       <HomePage />
     </div>
   );
