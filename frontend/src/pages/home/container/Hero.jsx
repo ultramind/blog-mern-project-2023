@@ -7,14 +7,14 @@ const Hero = () => {
   return (
     <section className="container mx-auto flex flex-col px-5 py-5 lg:flex-row">
       <div className="mt-20 lg:w-1/2">
-        <h1 className="font-roboto text-4xl text-center font-bold text-dark-soft md:text-5xl lg:text-left lg:max-w-[540px]">
+        <h1 className="font-roboto text-4xl text-center font-bold text-dark-soft md:text-5xl lg:text-4xl xl:text-5xl lg:text-left lg:max-w-[540px]">
           Read the most intresting articles
         </h1>
-        <p className="text-dark-light mt-4 text-center  md:text-xl lg:text-left">
+        <p className="text-dark-light mt-4 text-center  md:text-xl lg:text-left lg:text-base xl:text-xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua
         </p>
-        <div className="flex flex-col gap-y-2.5 mt-10 relative">
+        <div className="flex flex-col gap-y-2.5 mt-10 lg:mt-6 xl:mt-10 relative">
           <div className="relative">
             <FiSearch className="absolute left-3 top-1/3 font-semibold -transalte-y-12 w-5 h-5 text-[#959EAD]" />
             <input
@@ -28,10 +28,10 @@ const Hero = () => {
           </button>
         </div>
         <div className="flex mt-4 flex-col lg:flex-row lg:items-start lg:flex-nowrap lg:gap-x-4 lg:mt-7">
-          <span className="text-dark-light font-bold italic mt-2 lg:mt-4">
+          <span className="text-dark-light font-bold italic mt-2 lg:mt-4 lg:text-sm xl:text-base">
             Popular Tags
           </span>
-          <ul className="flex flex-wrap gap-x-2.5 gap-y-2.5 mt-3">
+          <ul className="flex flex-wrap gap-x-2.5 gap-y-2.5 mt-3 lg:text-sm xl:text-base">
             <li className="rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-bold">
               Design
             </li>
