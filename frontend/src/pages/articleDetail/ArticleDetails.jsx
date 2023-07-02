@@ -4,6 +4,7 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import { images } from "../../constant";
 import { Link } from "react-router-dom";
 import SuggestedPosts from "./container/SuggestedPosts";
+import CommentContainer from "../../components/comments/CommentContainer";
 
 const breadCrumbsData = [
   {
@@ -62,7 +63,7 @@ const ArticleDetails = () => {
           />
           <Link
             to="/blog?category=selectedCategory"
-            className="text-primary text-sm font-roboto block md:text-base md:mt-4"
+            className="text-primary text-xl mt-6 font-roboto block md:text-base md:mt-4"
           >
             {" "}
             EDUCATION
@@ -80,6 +81,18 @@ const ArticleDetails = () => {
               senectus et netus. Mattis pellentesque id nibh tortor id aliquet
               lectus proin.
             </p>
+            <p className="leading-7">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae
+              congue mauris rhoncus aenean vel elit scelerisque. In egestas erat
+              imperdiet sed euismod nisi porta lorem mollis. Morbi tristique
+              senectus et netus. Mattis pellentesque id nibh tortor id aliquet
+              lectus proin.
+            </p>
+          </div>
+          <div>
+            <CommentContainer className="mt-10" loginedUserId="a" />
           </div>
         </article>
         <SuggestedPosts

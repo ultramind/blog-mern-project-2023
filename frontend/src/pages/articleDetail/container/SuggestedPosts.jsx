@@ -21,9 +21,7 @@ const SuggestedPosts = ({ className, header, posts, tags }) => {
               alt="Post image"
             />
             <div className="text-sm font-roboto text-dark-hard font-semibold">
-              <h3 className="text-sm font-roboto md:text-base font-semibold lg:text-lg">
-                {item.title}
-              </h3>
+              <h3 className="font-semibold text-lg mt-4">{item.title}</h3>
               <span className="text-sm opacity-60">
                 {new Date(item.createdAt).toLocaleDateString("ens-US", {
                   day: "numeric",
@@ -39,6 +37,7 @@ const SuggestedPosts = ({ className, header, posts, tags }) => {
       <div className="flex flex-wrap gap-x-2 gap-y-2 mt-4">
         {tags.map((item, index) => (
           <Link
+            key={index}
             to="/"
             className="inline-block px-2 py-1.5 text-sm rounded-md bg-primary text-white md:text-sm"
           >
