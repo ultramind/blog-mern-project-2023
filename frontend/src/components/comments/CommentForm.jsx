@@ -22,7 +22,7 @@ const CommentForm = ({
           onChange={(e) => setValue(e.target.value)}
           placeholder="Send your reply here..."
         />
-        <div className="flex items-center gap-x-2 pt-2">
+        <div className="flex flex-col-reverse items-center gap-y-2 gap-x-2 pt-2 min-[420px]:flex-row">
           {formCanncelHandler && (
             <button
               onClick={formCanncelHandler}

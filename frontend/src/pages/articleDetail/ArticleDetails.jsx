@@ -5,6 +5,7 @@ import { images } from "../../constant";
 import { Link } from "react-router-dom";
 import SuggestedPosts from "./container/SuggestedPosts";
 import CommentContainer from "../../components/comments/CommentContainer";
+import SocialShareButtons from "../../components/SocialShareButtons";
 
 const breadCrumbsData = [
   {
@@ -53,7 +54,7 @@ const tagData = ["Medical", "LifeStyle", "Learn", "Food", "Diet", "Education"];
 const ArticleDetails = () => {
   return (
     <MainLayout>
-      <section className="container mx-auto max-w-5xl flex flex-col px-5 py-5 lg:flex-row lg:gap-x-5 lg:items-start">
+      <section className="container mx-auto max-w-6xl flex flex-col px-5 py-5 lg:flex-row lg:gap-x-5 lg:items-start">
         <article className="flex-1">
           <BreadCrumbs data={breadCrumbsData} />
           <img
@@ -95,12 +96,23 @@ const ArticleDetails = () => {
             <CommentContainer className="mt-10" loginedUserId="a" />
           </div>
         </article>
-        <SuggestedPosts
-          className="mt-8 lg:mt-0 lg:max-w-xs"
-          header="Latest Posts"
-          posts={postData}
-          tags={tagData}
-        />
+        <div>
+          <SuggestedPosts
+            className="mt-8 lg:mt-0 lg:max-w-xs"
+            header="Latest Posts"
+            posts={postData}
+            tags={tagData}
+          />
+          <div className="mt-7">
+            <h2 className="font-roboto font-semibold text-dark-hard mb-4 md:text-xl">
+              Share On:
+            </h2>
+            <SocialShareButtons
+              url={encodeURI("http://127.0.0.1:5173/blog/1")}
+              title={encodeURIComponent("Clent Side Validation")}
+            />
+          </div>
+        </div>
       </section>
     </MainLayout>
   );
